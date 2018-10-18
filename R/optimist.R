@@ -5,6 +5,7 @@ NULL
 #' @title plot_xts
 #' @description Plots time series from xts
 #' @param x xts
+#' @export
 plot_xts <- function(x, ...){
   x %>%
     as.data.frame() %>%
@@ -24,6 +25,7 @@ plot_xts <- function(x, ...){
 #' @param column indicating which column should be returned: "Open", "High", "Low", "Close", "Volume", ("Adjusted")
 #' @param ... additional parameters
 #' @param periodicity periodicity of data to query and return. Must be one of "daily", "weekly", "monthly", ("daily")
+#' @export
 get_prices_yahoo <- function(
   yahoo_id,
   column = 'Adjusted',
@@ -54,6 +56,7 @@ get_prices_yahoo <- function(
 #' @title get_dlyChg_from_price
 #' @description Builds an xts containing daily price changes
 #' @param price xts containing prices
+#' @export
 get_dlyChg_from_price <- function(
   price
 ) {
@@ -67,6 +70,7 @@ get_dlyChg_from_price <- function(
 #' @title get_cumRet_from_dlyChg
 #' @description Builds an xts containing cumulative returns
 #' @param dlyChg xts containing daily changes
+#' @export
 get_cumRet_from_dlyChg <- function(
   dlyChg
 ) {
@@ -84,6 +88,7 @@ get_cumRet_from_dlyChg <- function(
 #' @param dlyChg_t2 daily changes at t2
 #' @param portWeightOpen_t2 portfolio weight at the open on t2 
 #' @param portValue_t1 portfolio value at t1
+#' @export
 get_rebalance_t2 <- function(
   dlyChg_t2,
   portWeightOpen_t2,
@@ -103,6 +108,7 @@ get_rebalance_t2 <- function(
 #' @description Computes daily portofolio weights and value 
 #' @param dlyChg xts that contains daily changes
 #' @param rebWeight xts that contains rebalance weights
+#' @export
 get_rebalance_ <- function(
   dlyChg,
   rebWeight
@@ -146,6 +152,7 @@ get_rebalance_ <- function(
 #' @description Computes daily portofolio weights, value and contributions 
 #' @param dlyChg xts that contains daily changes
 #' @param rebWeight xts that contains rebalance weights
+#' @export
 get_rebalance <- function(
   dlyChg,
   rebWeight
@@ -171,6 +178,7 @@ get_rebalance <- function(
 #' @param T where the geometric distribution is truncated
 #' @param halflife number of days that accumulate 0.5 density
 #' @param interval as in uniroot
+#' @export
 get_w_with_geomTruncDecay <- function(
   T,
   halflife,
@@ -191,6 +199,7 @@ get_w_with_geomTruncDecay <- function(
 #' @param halflife number of days that accumulate 0.5 density
 #' @param interval as in uniroot
 #' @param annualization_factor in days (252 days in a year)
+#' @export
 get_meanRet_from_dlyChg <- function(
   dlyChg,
   method = "geometric",
@@ -223,6 +232,7 @@ get_meanRet_from_dlyChg <- function(
 #' @param halflife number of days that accumulate 0.5 density
 #' @param trim should the first rolling window be eliminated?
 #' @param interval as in uniroot
+#' @export
 get_rollChg_from_dlyChg <- function(
   dlyChg,
   method = "geometric",
@@ -294,7 +304,7 @@ weighted.sd <- function (
 #' @param halflife number of days that accumulate 0.5 density
 #' @param interval as in uniroot
 #' @param annualization_factor in days (252 days in a year)
-
+#' @export
 get_sdRet_from_dlyChg <- function(
   dlyChg,
   method = "arithmetic",
@@ -333,7 +343,7 @@ get_sdRet_from_dlyChg <- function(
 #' @param dlyChg xts that contains daily changes
 #' @param roll number of days in a rolling window
 #' @param roll_halflife within a rolling window
-
+#' @export
 plot_riskReward_from_dlyChg <- function(
   dlyChg,
   roll,
@@ -381,7 +391,7 @@ plot_riskReward_from_dlyChg <- function(
 #' @param dlyChg xts that contains daily changes
 #' @param halflife number of days that accumulate 0.5 density
 #' @param ... parameters passed to get_w_with_geomTruncDecay()
-
+#' @export
 get_covRet_from_dlyChg <- function(
   dlyChg,
   halflife = NULL,
@@ -405,6 +415,7 @@ get_covRet_from_dlyChg <- function(
 #' @description gets risk parity naive weights
 #' @param dlyChg xts that contains daily changes
 #' @param halflife number of days that accumulate 0.5 density
+#' @export
 get_naiveParity_weights <- function(
   dlyChg,
   halflife) {
@@ -421,7 +432,7 @@ get_naiveParity_weights <- function(
 #' @description gets risk contribution parity weights
 #' @param dlyChg xts that contains daily changes
 #' @param halflife number of days that accumulate 0.5 density
-
+#' @export
 get_contribParity_weights <- function(
   dlyChg, 
   halflife
@@ -486,7 +497,7 @@ grad_principalParity <- function(x, P, lam, K) {
 #' @description gets risk contribution parity weights
 #' @param dlyChg xts that contains daily changes
 #' @param halflife number of days that accumulate 0.5 density
-
+#' @export
 get_principalParity_weights <- function(
   dlyChg,
   halflife, 
@@ -531,6 +542,7 @@ get_principalParity_weights <- function(
 #' @param min_window number of days in the first window
 #' @param roll_parity days for the output's the rolling window
 #' @param ... fun_riskParity_weights() parameters
+#' @export
 get_riskParity_dlyWeights <- function(
   dlyChg, 
   fun_riskParity_weights = get_naiveParity_weights,
@@ -577,6 +589,7 @@ get_riskParity_dlyWeights <- function(
 #' @param halflife number of days that accumulate 0.5 density
 #' @param min_window number of days in the first window
 #' @param roll_parity days for the output's the rolling window
+#' @export
 get_dlyImpliedRet_from_dlyWeights <- function(
   dlyWeights, 
   dlyChg, 
@@ -617,7 +630,7 @@ get_dlyImpliedRet_from_dlyWeights <- function(
 #' @param min_window number of days in the first window
 #' @param roll_optim days for the output's the rolling window
 #' @param delta risk aversion parameter
-
+#' @export
 get_optim_dlyWeights_from_dlyImpliedRet <- function(
   dlyImpliedRet, 
   dlyChg, 
