@@ -9,7 +9,7 @@ Description: This package is a companion to my thesis "Risk Parity Implied Retur
 License: GPL (>= 2)
 Imports: 
   Rcpp (>= 0.12.14),
-  tidyverse (>= 1.2), 
+  tidyverse (>= 1.0), 
   xts (>= 0.10-1),
   quantmod (>= 0.4-12),
   mltools (>= 0.3.4),
