@@ -1,3 +1,7 @@
+#' @import quantmod
+#' @import xts
+#' @import tidyverse
+
 #' @useDynLib optimist
 #' @importFrom Rcpp sourceCpp
 NULL

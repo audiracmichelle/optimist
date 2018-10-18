@@ -12,7 +12,6 @@ Imports:
   tidyverse (>= 1.0), 
   xts (>= 0.10-1),
   quantmod (>= 0.4-12),
-  mltools (>= 0.3.4),
   nloptr (>= 1.0.4)
 LinkingTo: Rcpp
 NeedsCompilation: yes
