@@ -1,0 +1,19 @@
+Package: optimist
+Type: Package
+Title: Risk Parity Implied Returns
+Version: 1.0
+Date: 2018-10-17
+Author: Michelle Audirac
+Maintainer: Michelle Audirac <audiracmichelle@gmail.com>
+Description: This package is a companion to my thesis "Risk Parity Implied Returns".
+License: GPL (>= 2)
+Imports: 
+  Rcpp (>= 0.12.14),
+  tidyverse (>= 1.2), 
+  xts (>= 0.10-1),
+  quantmod (>= 0.4-12),
+  mltools (>= 0.3.4),
+  nloptr (>= 1.0.4)
+LinkingTo: Rcpp
+NeedsCompilation: yes
+RoxygenNote: 6.0.1
