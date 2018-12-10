@@ -1,7 +1,5 @@
 # optimist
 
-R package
+Paquete R.
 
-This package helps manipulate asset prices.
-
-It's main purpose is to build implied returns from risk parity indices.
+Se trata de una paquetería didáctica cuyo propósito es construir retornos implícitos de paridad de riesgo.
