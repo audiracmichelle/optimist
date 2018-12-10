@@ -1,5 +1,7 @@
 # optimist
 
-Paquete R.
+R package: a didactic.
 
-Se trata de una paquetería didáctica cuyo propósito es construir retornos implícitos de paridad de riesgo.
+The purpose of this package is to build risk parity implied returns for portfolio optimization.
+
+## installation
