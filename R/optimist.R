@@ -713,3 +713,23 @@ get_optim_dlyWeights_from_dlyImpliedRet <- function(
   
   optim_dlyWeights
 }
+
+
+#' @title plotly_xts
+#' @description Plots time series from xts
+#' @param x xts
+plotly_xts <- function(x, ...){
+  x %<>%
+    as.data.frame() %>%
+    tibble::rownames_to_column("date") %>%
+    mutate(date = as.Date(date)) %>%
+    gather(key, value, -date)
+  
+  p <- x %>%
+    plot_ly(x = ~date,
+            y = ~value,
+            color = ~key, ...) %>%
+    add_lines()
+  
+  p
+}

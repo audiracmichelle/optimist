@@ -7,11 +7,12 @@ Author: Michelle Audirac
 Maintainer: Michelle Audirac <audiracmichelle@gmail.com>
 Description: This package is a companion to my thesis "Risk Parity Implied Returns".
 License: GPL (>= 2)
-Imports: 
-  Rcpp (>= 0.12.14),
+Depends:
   tidyverse (>= 1.0.0), 
   xts (>= 0.10-1),
-  quantmod (>= 0.4-12),
+  quantmod (>= 0.4-12) 
+Imports: 
+  Rcpp (>= 0.12.14),
   nloptr (>= 1.0.4)
 LinkingTo: Rcpp
 NeedsCompilation: yes
